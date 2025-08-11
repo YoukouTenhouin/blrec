@@ -56,6 +56,8 @@ async def get_nav(cookie: str) -> ResponseData:
 
 def get_quality_name(qn: QualityNumber) -> str:
     QUALITY_MAPPING = {
+        30000: '杜比',
+        25000: '原画真彩',
         20000: '4K',
         10000: '原画',
         401: '蓝光(杜比)',

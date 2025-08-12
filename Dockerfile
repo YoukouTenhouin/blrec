@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends ffmpeg build-essential python3-dev && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install --no-cache-dir -e . && \
+    pip install bili_ticket_gt_python && \
     apt-get purge -y --auto-remove build-essential python3-dev
 # ref: https://github.com/docker-library/python/issues/60#issuecomment-134322383
 

@@ -17,7 +17,7 @@ RUN apt-get update && \
         libssl-dev && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install --no-cache-dir -e . && \
-    pip install bili_ticket_gt_python && \
+    pip3 install --no-cache-dir bili_ticket_gt_python && \
     apt-get purge -y --auto-remove build-essential python3-dev pkg-config libssl-dev
 # ref: https://github.com/docker-library/python/issues/60#issuecomment-134322383
 

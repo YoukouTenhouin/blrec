@@ -7,6 +7,8 @@ ApiPlatform = Literal[
 ]
 
 QualityNumber = Literal[
+    30000,  # 杜比
+    25000,  # 原画真彩
     20000,  # 4K
     10000,  # 原画
     401,    # 蓝光(杜比)

@@ -53,6 +53,8 @@ export const RECORDING_MODE_OPTIONS = [
 ] as const;
 
 export const QUALITY_OPTIONS = [
+  { label: '杜比', value: 30000 },
+  { label: '原画真彩', value: 25000 },
   { label: '4K', value: 20000 },
   { label: '原画', value: 10000 },
   { label: '蓝光(杜比)', value: 401 },

@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.11-slim-buster
+FROM python:3.11-slim-bookworm
 
 WORKDIR /app
 VOLUME ["/cfg", "/log", "/rec"]
@@ -9,10 +9,16 @@ COPY src src/
 COPY setup.py setup.cfg ./
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ffmpeg build-essential python3-dev && \
+    apt-get install -y --no-install-recommends \
+        ffmpeg \
+        build-essential \
+        python3-dev \
+        pkg-config \
+        libssl-dev && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install --no-cache-dir -e . && \
-    apt-get purge -y --auto-remove build-essential python3-dev
+    pip3 install --no-cache-dir bili_ticket_gt_python && \
+    apt-get purge -y --auto-remove build-essential python3-dev pkg-config libssl-dev
 # ref: https://github.com/docker-library/python/issues/60#issuecomment-134322383
 
 ENV BLREC_DEFAULT_SETTINGS_FILE=/cfg/settings.toml
